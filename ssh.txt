@@ -1,0 +1,33 @@
+SSH to linux machine ini aws using CLI
+
+steps- 
+1)create a directory and create a file in that directory
+2)copy .ppk file in above file 
+3)give permission to that file 
+  chmod 400 <filename>
+4)command to ssh the remote machine 
+  
+  ssh -i <keypair> ec2-user@<publicIP>
+
+
+
+
+Passwordless key
+
+steps 
+1)open the sshd config file in server 1
+  vim /etc/ssh/sshd_config
+2)Change the PasswordAuthentication no config to
+   PasswordAuthentication yes
+3)Restart the sshd daemon
+  service sshd restart
+4)ssh-keygen
+5)open the sshd config file in server 2
+  vim /etc/ssh/sshd_config
+ Change the PasswordAuthentication no config to
+   PasswordAuthentication yes
+6)add user n password in server 2
+7)copy public key to server 2
+ssh-copy-id ec2-user@<ipserver2>
+8)check the key in server 2
+authentication keys
