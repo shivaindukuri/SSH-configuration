@@ -1,4 +1,4 @@
-SSH to linux machine ini aws using CLI
+SSH to linux machine in aws using CLI
 
 steps- 
 1)create a directory and create a file in that directory
